@@ -27,11 +27,15 @@ img {display: block;}
     padding-top: 24px;
     padding-bottom: 24px;
     border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 .head-conteiner {
     display: flex;
     justify-content: space-between;
 }
+
+
+
 .navigation {
     display: flex;
     align-items: center;
@@ -41,6 +45,9 @@ img {display: block;}
     gap: 40px;
     position: relative;
 }
+
+
+
 .logo {
     font-family: "Raleway", sans-serif;
     font-weight: 700;
@@ -55,6 +62,18 @@ img {display: block;}
     display: flex;
     gap: 40px;   
 }
+
+.contacts:first-child {
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contacts:last-child {
+
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+
 .logo-top {color: #2e2f42;} 
 .logo-bottom { color: #f4f4fd;}
 .menu-link {
@@ -83,16 +102,23 @@ transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.nav-active{
+    position: relative; 
+}
+.nav-active .menu-link {
+color: #404bbf;
+}
 .navigation-item:first-child .menu-link::after {
     content: "";
     display: block;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     width: 48px;
     height: 4px;
-    background-color: #4d5ae5;
+    background-color: #404bbf;
     border-radius: 2px;
     position: absolute;
     left: 0;
-    bottom: -20px;
+    bottom: -1px;
     transition-property: background-color;
 }
 
@@ -102,6 +128,15 @@ transition-duration: 250ms;
         background-color: #404bbf;
 }
 
+
+
+
+
+
+
+
+
+
 .hero {
     background: #2e2f42;
     padding-top: 188px;
@@ -110,7 +145,11 @@ transition-duration: 250ms;
                 rgba(46, 47, 66, 0.7),
                 rgba(46, 47, 66, 0.7)),
             url(../images/people-office.jpg);
-            min-width: 1440рх;
+            max-width: 1440рх;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 .hero-title {
@@ -172,6 +211,7 @@ transition-duration: 250ms;
     align-items: center;
     justify-content: center;
     fill: transparent;
+    margin-bottom: 8px;
 }
 
 .any-text {
@@ -250,28 +290,30 @@ transition-duration: 250ms;
     transition-property: background-color;
 }
 
+.soc-link {
+    width: 100%;
+    height: 100%;
+    background-color: #4D5AE5;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.soc-link:hover, .soc-link:focus { 
+    background-color: #404bbf;
+} 
 
 
 .social-ico {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         width: 40px;
         height: 40px;
-        border-radius: 50%;
-        background-color: #4D5AE5;
 }
 
 .icon {
-    fill: #fff
+    fill: #f4f4fd;
 }
-
-.socials:hover .social-ico {
-    background-color: #404BBF;
-    transition-duration: 250ms;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 
 
 
@@ -350,6 +392,14 @@ transition-duration: 250ms;
     padding-top: 100px;
     padding-bottom: 100px;
 }
+
+.container-foot {
+display: flex;
+align-items: baseline;
+
+}
+
+
 .footer-text {
     font-size: 16px;
     line-height: 1.5;
@@ -357,21 +407,14 @@ transition-duration: 250ms;
     color: #f4f4fd;
     width: 264px;
 }
-/* .logo-bottom-type {
-    display: inline-block;
-} */
-.foot-sections {
-    display: flex;
-    gap: 120px;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-.foot-column {
+
+.foot-logo {
  display: flex;
 flex-direction: column;
 align-items: flex-start;
 justify-content: flex-start;
 gap: 16px;
+margin-right: 120px;
 }
 .social-links {
     display: flex;
@@ -381,12 +424,17 @@ gap: 16px;
     max-width: 208px;
     transition-property: background-color;
 }
+.social-ico {
+    width: 40px;
+    height: 40px;
+}
 .social-media {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    color: #fff;
+    color: #FFFFFF;
+    margin-bottom: 16px;
 }
 .social-links:hover .social-ico {
     background-color: #31D0AA;
